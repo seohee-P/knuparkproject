@@ -27,7 +27,7 @@ public class BlogService {
 
     }
     // 단건 조회
-    public Article findByid(Long id) {
+    public Article findById(Long id) {
         return blogRepository.findById(id).orElseThrow(()-> new IllegalArgumentException("article not exist ! : " + id));
 
     }

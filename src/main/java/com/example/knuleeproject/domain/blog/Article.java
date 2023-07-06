@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 
 @Getter // 자바에서 갯터 셋터를 자동화해주는 롬복 에노테이션
-@NoArgsConstructor(access = AccessLevel.PRIVATE) // 생성자의 인수가 아무것도 없는것을 대체, 보안성레벨 지정
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 생성자의 인수가 아무것도 없는것을 대체, 보안성레벨 지정
 @EntityListeners(AuditingEntityListener.class)
 @Entity // 자바에서 데이터베이스 테이블형식을 사용하는 에노테이션
 public class Article {
@@ -27,7 +27,7 @@ public class Article {
     @Column(name = "content",nullable = false) // 컬럼 이름 지정, 널 불허
     private  String content;
     @CreatedDate // 로그 관리를 위해 에노테이션을 사용
-    @Column(name = "crated_at") // 자바 영역에서 카멜표기법, 데이터 베이스에서는 언더바가 관례
+    @Column(name = "created_at") // 자바 영역에서 카멜표기법, 데이터 베이스에서는 언더바가 관례
     private LocalDateTime createdAt;
 
     @LastModifiedDate
