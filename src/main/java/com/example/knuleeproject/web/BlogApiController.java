@@ -19,13 +19,13 @@ import java.util.stream.Collectors;
 public class BlogApiController {
     private final BlogService blogService;
 
-    @PostMapping("/api/lastest/articles")
+    @PostMapping("/api/latest/articles")
     public ResponseEntity<Article> addArticle(@RequestBody AddArticleRequest requestDto){
         return  ResponseEntity.status(HttpStatus.CREATED)
                 .body(blogService.save(requestDto));
     }
 
-    @GetMapping("/api/lastest/articles")
+    @GetMapping("/api/latest/articles")
     public ResponseEntity<List<ArticleResponseDto>> findAllArticles() {
         List<ArticleResponseDto>  articles = blogService.findAll()
                 .stream()
@@ -36,12 +36,12 @@ public class BlogApiController {
 
     }
 
-    @GetMapping("/api/lastest/articles/{id}")
+    @GetMapping("/api/latest/articles/{id}")
     public ResponseEntity<ArticleResponseDto> findArticle(@PathVariable Long id){
         return ResponseEntity.ok().body(new ArticleResponseDto(blogService.findByid(id)));
     }
 
-    @DeleteMapping("api/lastest/articles/{id}")
+    @DeleteMapping("api/latest/articles/{id}")
     public ResponseEntity<Void> deleteArticle(@PathVariable Long id){
         blogService.delete(id);
         return ResponseEntity.ok().build();
@@ -49,7 +49,7 @@ public class BlogApiController {
     }
 
     //수정
-    @PutMapping("/api/lastest/articles/{id}")
+    @PutMapping("/api/latest/articles/{id}")
     public ResponseEntity<Article> updateArticle(@PathVariable Long id, @RequestBody UpateArticleRequestDto requestDto) {
         Article updatedArticle = blogService.update(id,requestDto);
 
