@@ -4,7 +4,6 @@ import com.example.knuleeproject.domain.blog.Article;
 import com.example.knuleeproject.service.BlogService;
 import com.example.knuleeproject.web.dto.ArticleListViewResponse;
 import com.example.knuleeproject.web.dto.ArticleViewResponse;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,7 +41,7 @@ public class BlogViewController {
     /*
     @RequestParam(required = false)
      */
-    public String newarticle(@RequestParam(required = false) Long id, Model model) {
+    public String newArticle(@RequestParam(required = false) Long id, Model model) {
         if (id == null){
             //신규 등록
             model.addAttribute("article", new ArticleViewResponse());
