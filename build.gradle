@@ -31,7 +31,6 @@ dependencies {
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
     implementation 'io.jsonwebtoken:jjwt:0.9.1' //java JWT lib
     implementation 'javax.xml.bind:jaxb-api:2.3.1' // XML to JAVA mapper
-
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok' // test코드에서 롬복 사용 가능하게
     testAnnotationProcessor 'org.projectlombok:lombok' // test코드에서 롬복 사용 가능하게
